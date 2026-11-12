@@ -59,14 +59,10 @@ src/
 ## Animation Details
 Floating illustration (5s loop), one entrance fade, hover lift + artwork zoom, CTA arrow nudge. All animations are disabled under `prefers-reduced-motion`.
 
-## Screenshots
-_Add screenshots here (desktop / tablet / mobile)._
-
 ## Live Demo
-_Add Vercel/Netlify link._
-
+https://veloopbanner-self.vercel.app/
 ## GitHub Repository
-_Add repository link._
+https://github.com/anandnare/veloopbanner/
 
 ## Author
 Anand Basavraj Nare
