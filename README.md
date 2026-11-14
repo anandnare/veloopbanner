@@ -53,12 +53,20 @@ src/
 
 ## Responsive Design
 - **Desktop (≥1024px):** two columns, height `clamp(410px, 34vw, 450px)`
-- **Tablet (768–1023px):** two columns, height follows content within 400–540px
+- **Tablet (768–1023px):** two columns, height follows content within 380–540px
 - **Mobile (<768px):** illustration on top, then text and CTA; height auto within 330–520px
 
 ## Animation Details
-Floating illustration (5s loop), one entrance fade, hover lift + artwork zoom, CTA arrow nudge. All animations are disabled under `prefers-reduced-motion`.
+Floating illustration (6s loop), entrance fade, hover lift + border glow + artwork zoom, CTA sheen and arrow nudge. All animations are disabled under `prefers-reduced-motion`.
 
+<<<<<<< HEAD
+=======
+## Screenshots
+| Desktop (1440px) | Tablet (820px) | Mobile (390px) |
+|---|---|---|
+| ![Desktop](screenshots/desktop.png) | ![Tablet](screenshots/tablet.png) | ![Mobile](screenshots/mobile.png) |
+
+>>>>>>> 00e0176 (Redesign banners with full artwork and responsive layout)
 ## Live Demo
 https://veloopbanner-self.vercel.app/
 ## GitHub Repository

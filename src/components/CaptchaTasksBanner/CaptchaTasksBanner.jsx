@@ -1,6 +1,6 @@
-import { ShieldCheck, Gem, ChevronRight } from 'lucide-react';
+import { ShieldCheck, Gem } from 'lucide-react';
 import RewardBanner from '../RewardBanner/RewardBanner.jsx';
-import s from '../RewardBanner/RewardBanner.module.css';
+import Flow from '../RewardBanner/Flow.jsx';
 import art from '../../assets/art-captcha.jpg';
 
 export default function CaptchaTasksBanner() {
@@ -10,17 +10,19 @@ export default function CaptchaTasksBanner() {
       heading={<>Solve Captchas.<br /><span>Earn Gems.</span></>}
       description="Complete simple captcha tasks accurately and earn eligible Gem rewards."
       image={art}
-      imageAlt="A laptop showing the captcha K7M4 with purple gems around it"
+      imageAlt="Laptop showing the captcha K7M4 with a checkmark button and Gem rewards"
+      ar={1.338}
       ctaText="Start Task"
       route="/captcha"
     >
-      <ol className={s.flow} aria-label="Captcha, verify, Gem reward">
-        <li className={s.node}>K7M4</li>
-        <ChevronRight size={16} className={s.arrow} aria-hidden="true" />
-        <li className={s.node}><ShieldCheck size={20} aria-label="Verified" /></li>
-        <ChevronRight size={16} className={s.arrow} aria-hidden="true" />
-        <li className={s.node}><Gem size={20} aria-label="Gem reward" /></li>
-      </ol>
+      <Flow
+        label="Captcha, verify, Gem reward"
+        items={[
+          { node: 'K7M4' },
+          { node: <ShieldCheck size={20} aria-label="Verified" /> },
+          { node: <Gem size={20} aria-label="Gem reward" /> },
+        ]}
+      />
     </RewardBanner>
   );
 }

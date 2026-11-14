@@ -5,11 +5,11 @@ export default function SwapCenterBanner() {
   return (
     <RewardBanner
       theme="swap"
-      rule
       heading={<><span>Swap</span> Center</>}
       description="Convert eligible reward balances between supported currencies."
       image={art}
-      imageAlt="A VE reward card and an SVE reward card with a circular swap icon over a reward wallet"
+      imageAlt="VE and SVE reward cards with a swap icon between them over a reward wallet"
+      ar={1.422}
       ctaText="Open Swap Center"
       route="/swap"
     />

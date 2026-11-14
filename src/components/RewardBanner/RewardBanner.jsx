@@ -4,21 +4,24 @@ import { ArrowRight } from 'lucide-react';
 import styles from './RewardBanner.module.css';
 
 /**
- * Reusable banner shell. Layout, sizing, CTA and themes live here;
- * each banner supplies its own copy, artwork, extras and theme.
+ * Reusable banner shell. Layout, sizing, CTA, hover/focus states and themes
+ * live here; each banner supplies copy, artwork, extras and a theme.
+ *
+ * `ar` is the artwork aspect ratio (width / height). It reserves the right
+ * amount of space on mobile so the illustration is always shown in full.
  */
 export default function RewardBanner({
-  theme = 'captcha',
+  theme,
   badge,
   BadgeIcon,
   heading,
   description,
   image,
   imageAlt = '',
+  ar = 1.3,
   ctaText,
   route = '/',
   secondary,
-  rule = false,
   footer,
   children,
 }) {
@@ -32,7 +35,7 @@ export default function RewardBanner({
       aria-labelledby={headingId}
       onClick={() => go(route)}
     >
-      <div className={styles.main}>
+      <div className={styles.body}>
         <div className={styles.content}>
           {badge && (
             <span className={styles.badge}>
@@ -41,10 +44,9 @@ export default function RewardBanner({
             </span>
           )}
           <h2 id={headingId} className={styles.heading}>{heading}</h2>
-          {rule && <span className={styles.rule} aria-hidden="true" />}
           <p className={styles.desc}>{description}</p>
 
-          {children && <div className={styles.extra}>{children}</div>}
+          {children}
 
           <div className={styles.actions}>
             <button
@@ -52,8 +54,8 @@ export default function RewardBanner({
               className={styles.cta}
               onClick={(e) => { e.stopPropagation(); go(route); }}
             >
-              {ctaText}
-              <span className={styles.ctaIcon}><ArrowRight size={16} aria-hidden="true" /></span>
+              <span>{ctaText}</span>
+              <ArrowRight size={18} aria-hidden="true" className={styles.arrow} />
             </button>
             {secondary && (
               <button
@@ -68,8 +70,8 @@ export default function RewardBanner({
           </div>
         </div>
 
-        <div className={styles.media}>
-          <img className={styles.art} src={image} alt={imageAlt} loading="lazy" decoding="async" />
+        <div className={styles.stage} style={{ '--ar': ar }}>
+          <img className={styles.art} src={image} alt={imageAlt} width="900" height={Math.round(900 / ar)} decoding="async" />
         </div>
       </div>
 
